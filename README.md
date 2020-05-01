@@ -1,4 +1,4 @@
-# MlgPseudoPotential
+# BlgPseudoPotential
 _This repository presents the Haldane pseudopotential code for bilayer graphene models._
 
 In the studies of the quantum Hall effect, especially the fractional phases, physicists usually start with simple single-particle picture, in which we can solve the single-particle orbitals (wavefunctions) and the spectrum (eigenvalues) exactly. The interaction effect is then introduced to by evaluating the two-body interaction matrix element with the single-particle orbitals. 
