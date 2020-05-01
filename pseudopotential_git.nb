@@ -1,0 +1,292 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9603,        284]
+NotebookOptionsPosition[      8783,        263]
+NotebookOutlinePosition[      9141,        279]
+CellTagsIndexPosition[      9098,        276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Defining functions", "Section",
+ CellChangeTimes->{{3.795913069881166*^9, 
+  3.7959130745547943`*^9}},ExpressionUUID->"541e73e2-0fbf-421b-9fb7-\
+4d93b41b56f6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"TwoBodyElement", "[", 
+    RowBox[{
+    "Q1_", ",", "Q2_", ",", "m1p_", ",", "m2p_", ",", "m1_", ",", "m2_", ",", 
+     "l_"}], "]"}], ":=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", "*", "l"}], "+", "1"}], ")"}], "2"], "*", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], 
+     RowBox[{"Q1", "+", "Q2"}]], 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}], 
+          RowBox[{
+           RowBox[{"-", "m2p"}], "-", "m1p", "-", "mp"}]], "*", 
+         RowBox[{"ThreeJSymbol", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"l", ",", "m1p"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"lp", ",", "mp"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"l", ",", 
+             RowBox[{"-", "m1"}]}], "}"}]}], "]"}], "*", 
+         RowBox[{"ThreeJSymbol", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"l", ",", 
+             RowBox[{"-", "Q1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"lp", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"l", ",", "Q1"}], "}"}]}], "]"}], "*", 
+         RowBox[{"ThreeJSymbol", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"l", ",", "m2p"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"lp", ",", 
+             RowBox[{"-", "mp"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"l", ",", 
+             RowBox[{"-", "m2"}]}], "}"}]}], "]"}], "*", 
+         RowBox[{"ThreeJSymbol", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"l", ",", 
+             RowBox[{"-", "Q2"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"lp", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"l", ",", "Q2"}], "}"}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"mp", ",", 
+          RowBox[{"-", "lp"}], ",", "lp"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"lp", ",", "0", ",", 
+        RowBox[{"2", "*", "l"}]}], "}"}]}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7867300248591137`*^9, 3.78673011399757*^9}, {
+   3.786730209001051*^9, 3.7867303795183268`*^9}, {3.7867304157202806`*^9, 
+   3.786730553279645*^9}, 3.7867306291109343`*^9, {3.786731067788363*^9, 
+   3.786731069133947*^9}},ExpressionUUID->"ab226729-8a7b-4b0c-867f-\
+3b57019a491a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DoubletTwoBodyElement", "[", 
+    RowBox[{
+    "Q_", ",", "m1p_", ",", "m2p_", ",", "m1_", ",", "m2_", ",", "l_"}], 
+    "]"}], ":=", 
+   RowBox[{
+    FractionBox["1", "4"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"TwoBodyElement", "[", 
+       RowBox[{
+        RowBox[{"Q", "+", "2"}], ",", 
+        RowBox[{"Q", "+", "2"}], ",", "m1p", ",", "m2p", ",", "m1", ",", "m2",
+         ",", "l"}], "]"}], "+", 
+      RowBox[{"TwoBodyElement", "[", 
+       RowBox[{
+        RowBox[{"Q", "+", "2"}], ",", "Q", ",", "m1p", ",", "m2p", ",", "m1", 
+        ",", "m2", ",", "l"}], "]"}], "+", 
+      RowBox[{"TwoBodyElement", "[", 
+       RowBox[{"Q", ",", 
+        RowBox[{"Q", "+", "2"}], ",", "m1p", ",", "m2p", ",", "m1", ",", "m2",
+         ",", "l"}], "]"}], "+", 
+      RowBox[{"TwoBodyElement", "[", 
+       RowBox[{
+       "Q", ",", "Q", ",", "m1p", ",", "m2p", ",", "m1", ",", "m2", ",", 
+        "l"}], "]"}]}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.786730577043392*^9, 
+  3.786730775175806*^9}},ExpressionUUID->"25486030-1529-441a-b914-\
+c716fb1f05bc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PseudoPotential", "[", 
+   RowBox[{"n_", ",", "l_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"KroneckerDelta", "[", 
+      RowBox[{
+       RowBox[{"m1", "+", "m2"}], ",", 
+       RowBox[{"m3", "+", "m4"}], ",", 
+       RowBox[{
+        RowBox[{"2", "*", "l"}], "-", "m"}]}], "]"}], "*", 
+     RowBox[{"ClebschGordan", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "*", "l"}], "-", "m"}], ",", 
+         RowBox[{"m1", "+", "m2"}]}], "}"}]}], "]"}], "*", 
+     RowBox[{"ClebschGordan", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "*", "l"}], "-", "m"}], ",", 
+         RowBox[{"m3", "+", "m4"}]}], "}"}]}], "]"}], "*", 
+     RowBox[{
+      RowBox[{"DoubletTwoBodyElement", "[", 
+       RowBox[{
+        RowBox[{"l", "-", "n"}], ",", "m4", ",", "m3", ",", "m2", ",", "m1", 
+        ",", "l"}], "]"}], "/", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"l", "-", "n"}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m1", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m2", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m3", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m4", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7867310071391773`*^9, 3.786731033908321*^9}, {
+  3.786731090333271*^9, 3.786731155294425*^9}, {3.786731189913784*^9, 
+  3.7867312053895483`*^9}, {3.786731241898218*^9, 3.786731278465981*^9}, {
+  3.786731380321432*^9, 3.786731401731205*^9}, {3.786731509066276*^9, 
+  3.786731537069747*^9}, {3.786731794481763*^9, 3.786731866627407*^9}, {
+  3.7872127548742743`*^9, 
+  3.787212760380349*^9}},ExpressionUUID->"92782081-a8a6-4e2a-a6f4-\
+4d951c8f6455"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NRPseudoPotential", "[", 
+   RowBox[{"n_", ",", "l_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"KroneckerDelta", "[", 
+      RowBox[{
+       RowBox[{"m1", "+", "m2"}], ",", 
+       RowBox[{"m3", "+", "m4"}], ",", 
+       RowBox[{
+        RowBox[{"2", "*", "l"}], "-", "m"}]}], "]"}], "*", 
+     RowBox[{"ClebschGordan", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "*", "l"}], "-", "m"}], ",", 
+         RowBox[{"m1", "+", "m2"}]}], "}"}]}], "]"}], "*", 
+     RowBox[{"ClebschGordan", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"l", ",", "m4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "*", "l"}], "-", "m"}], ",", 
+         RowBox[{"m3", "+", "m4"}]}], "}"}]}], "]"}], "*", 
+     RowBox[{
+      RowBox[{"TwoBodyElement", "[", 
+       RowBox[{
+        RowBox[{"l", "-", "n"}], ",", 
+        RowBox[{"l", "-", "n"}], ",", "m4", ",", "m3", ",", "m2", ",", "m1", 
+        ",", "l"}], "]"}], "/", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"l", "-", "n"}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m1", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m2", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m3", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m4", ",", 
+      RowBox[{"-", "l"}], ",", "l"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.787039175039858*^9, 3.787039237430526*^9}, {
+  3.787212740585249*^9, 
+  3.787212746827065*^9}},ExpressionUUID->"b81e3994-cc57-4596-b27e-\
+72b44b6e1ed9"]
+}, Open  ]],
+
+Cell["Sample computations", "Section",
+ CellChangeTimes->{{3.795913089833745*^9, 
+  3.7959130934351807`*^9}},ExpressionUUID->"5dcff92e-4536-423f-aa78-\
+61f0c2f6f6ee"]
+},
+WindowSize->{808, 540},
+WindowMargins->{{0, Automatic}, {Automatic, 37}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 165, 3, 67, "Section",ExpressionUUID->"541e73e2-0fbf-421b-9fb7-4d93b41b56f6"],
+Cell[748, 27, 2574, 73, 140, "Input",ExpressionUUID->"ab226729-8a7b-4b0c-867f-3b57019a491a"],
+Cell[3325, 102, 1119, 30, 132, "Input",ExpressionUUID->"25486030-1529-441a-b914-c716fb1f05bc"],
+Cell[4447, 134, 2204, 61, 136, "Input",ExpressionUUID->"92782081-a8a6-4e2a-a6f4-4d951c8f6455"],
+Cell[6654, 197, 1944, 58, 136, "Input",ExpressionUUID->"b81e3994-cc57-4596-b27e-72b44b6e1ed9"]
+}, Open  ]],
+Cell[8613, 258, 166, 3, 67, "Section",ExpressionUUID->"5dcff92e-4536-423f-aa78-61f0c2f6f6ee"]
+}
+]
+*)
+
